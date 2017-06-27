@@ -12,11 +12,13 @@ node index.js -b -i cert-image.png -o baked-blockcert.png -B sample-blockcert.js
 ```
 
 ## Extract assertion from baked image
+
 ```
 node index.js -x -o baked-blockcert.png 
 ```
 
 ## Usage
+
 ```
 node index.js --help
 
