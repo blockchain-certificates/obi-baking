@@ -1,0 +1,23 @@
+{
+  "name": "obi_baking",
+  "version": "1.0.0",
+  "description": "Example of baking Blockcerts into Open Badges baked format",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blockchain-certificates/obi_baking.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/blockchain-certificates/obi_baking/issues"
+  },
+  "homepage": "https://github.com/blockchain-certificates/obi_baking#readme",
+  "dependencies": {
+    "commander": "^2.10.0",
+    "png-itxt": "^1.3.0"
+  }
+}
