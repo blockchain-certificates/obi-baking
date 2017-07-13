@@ -1,7 +1,7 @@
 var commander = require('commander');
 var fs = require('fs');
 var pngitxt = require('png-itxt');
-
+var https = require('https');
 
 function bake(imageToBake, blockcertFileName, bakedImage) {
 
@@ -33,6 +33,15 @@ function extract(bakedImage) {
     }));
 }
 
+function extract_url(bakedImageUrl) {
+  https.get(bakedImageUrl, function (res) {
+    res.pipe(pngitxt.get('openbadges', function (data, err) {
+      if (!err && data) {
+        console.log(data);
+      }
+    }));
+  });
+}
 
 var program = require('commander');
 
@@ -62,7 +71,11 @@ if (program.bake) {
     return;
   }
   var bakedImage = program.bakedImage;
-  extract(bakedImage);
+  if (bakedImage.indexOf('http') === 0) {
+    extract_url(bakedImage);
+  } else {
+    extract(bakedImage);
+  }
 
 } else {
   program.outputHelp();
